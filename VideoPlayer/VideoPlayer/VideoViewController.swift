@@ -13,12 +13,12 @@ import AVKit
 class VideoViewController: UIViewController {
 
 
-
   //  var tableView: UITableView!
     var searchController: UISearchController!
 
     var playButton: UIButton!
     var muteButton: UIButton!
+    var buttonbackgroundView: UIView!
     var videoView: UIView!
     var player:AVPlayer!
     var playBool:Bool! = false
@@ -76,8 +76,12 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        buttonbackgroundView = UIView(frame: CGRect(x: 0, y: 623, width: 375, height: 44))
+        buttonbackgroundView.backgroundColor = UIColor.black60
+        self.view.addSubview(buttonbackgroundView)
+
         videoView = UIView(frame: CGRect(x: 0, y: 64, width: 375, height: 564))
-        videoView.backgroundColor = .black
+        videoView.backgroundColor = UIColor.darkBlueGreyTwo
         self.view.addSubview(videoView)
 
         playButton = UIButton(frame: CGRect(x: 0, y: 623, width: 74, height: 44))
@@ -104,7 +108,7 @@ class VideoViewController: UIViewController {
         self.view.addSubview(playButton)
         self.view.addSubview(muteButton)
 
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = UIColor.darkBlueGreyTwo
 
 
         self.searchController =

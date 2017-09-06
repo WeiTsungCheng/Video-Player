@@ -12,6 +12,7 @@
 		C50D6DB21F5FC57E00094E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C50D6DB11F5FC57E00094E12 /* Assets.xcassets */; };
 		C50D6DB51F5FC57E00094E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C50D6DB31F5FC57E00094E12 /* LaunchScreen.storyboard */; };
 		C50D6DBD1F5FCB2B00094E12 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D6DBC1F5FCB2B00094E12 /* VideoViewController.swift */; };
+		C50D6DBF1F5FFBE000094E12 /* Color & Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D6DBE1F5FFBE000094E12 /* Color & Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C50D6DB41F5FC57E00094E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C50D6DB61F5FC57E00094E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C50D6DBC1F5FCB2B00094E12 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		C50D6DBE1F5FFBE000094E12 /* Color & Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color & Font.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				C50D6DAA1F5FC57E00094E12 /* AppDelegate.swift */,
 				C50D6DBC1F5FCB2B00094E12 /* VideoViewController.swift */,
+				C50D6DBE1F5FFBE000094E12 /* Color & Font.swift */,
 				C50D6DAE1F5FC57E00094E12 /* Main.storyboard */,
 				C50D6DB11F5FC57E00094E12 /* Assets.xcassets */,
 				C50D6DB31F5FC57E00094E12 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50D6DBF1F5FFBE000094E12 /* Color & Font.swift in Sources */,
 				C50D6DBD1F5FCB2B00094E12 /* VideoViewController.swift in Sources */,
 				C50D6DAB1F5FC57E00094E12 /* AppDelegate.swift in Sources */,
 			);
