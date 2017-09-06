@@ -18,20 +18,29 @@ class VideoViewController: UIViewController {
     var searchController: UISearchController!
 
     var playButton: UIButton!
-    var pauseButton: UIButton!
+    var muteButton: UIButton!
     var videoView: UIView!
     var player:AVPlayer!
-    var Bool:Bool! = false
+    var playBool:Bool! = false
+
+    var muteBool:Bool! = false
+
 
     func clickPlayButton() {
 
 
-        if Bool == true{
+        if playBool == true{
+
+            playButton.setTitle("Play", for: .normal)
             player.pause()
-            Bool = false
+            playBool = false
+
         }else{
+
+            playButton.setTitle("Pause", for: .normal)
             player.play()
-            Bool = true
+            playBool = true
+
         }
 
 
@@ -39,9 +48,19 @@ class VideoViewController: UIViewController {
 
     func clickMuteButton() {
 
+        if
+            muteBool == true{
 
+            muteButton.setTitle("Unmute", for: .normal)
+            player.isMuted = true
+            muteBool = false
 
+        }else{
 
+            muteButton.setTitle("Mute", for: .normal)
+            player.isMuted = false
+            muteBool = true
+        }
 
 
     }
@@ -58,13 +77,13 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
 
         videoView = UIView(frame: CGRect(x: 0, y: 64, width: 375, height: 564))
-        videoView.backgroundColor = .white
+        videoView.backgroundColor = .black
         self.view.addSubview(videoView)
 
         playButton = UIButton(frame: CGRect(x: 0, y: 623, width: 74, height: 44))
         playButton.setTitleColor(.white, for: .normal)
 
-        playButton.setTitle("Paly", for: .normal)
+        playButton.setTitle("Pause", for: .normal)
         playButton.isEnabled = true
 
         playButton.addTarget(
@@ -72,25 +91,23 @@ class VideoViewController: UIViewController {
             action: #selector(VideoViewController.clickPlayButton),
             for: .touchUpInside)
 
-        pauseButton = UIButton(frame: CGRect(x: 304, y: 623, width: 74, height: 44))
-        pauseButton.setTitle("Mute", for: .normal)
-        pauseButton.isEnabled = true
+        muteButton = UIButton(frame: CGRect(x: 304, y: 623, width: 74, height: 44))
+        muteButton.setTitle("Mute", for: .normal)
+        muteButton.isEnabled = true
 
-        pauseButton.addTarget(
+        muteButton.addTarget(
             self,
             action: #selector(VideoViewController.clickMuteButton),
             for: .touchUpInside)
 
 
         self.view.addSubview(playButton)
-        self.view.addSubview(pauseButton)
+        self.view.addSubview(muteButton)
 
         self.view.backgroundColor = UIColor.black
 
-        print("good")
 
-
-       self.searchController =
+        self.searchController =
             UISearchController(searchResultsController: nil)
 
         self.searchController.searchBar.searchBarStyle =
@@ -106,21 +123,21 @@ class VideoViewController: UIViewController {
 
 
 
-
-
-
-
         let url = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8")
 
         player = AVPlayer(url: url!)
+
         let playerLayer = AVPlayerLayer(player: player)
+
         playerLayer.frame = self.videoView.bounds
+
         self.videoView.layer.addSublayer(playerLayer)
+
         player.play()
-        Bool = true
+
+        playBool = true
 
 
-        // Do any additional setup after loading the view.
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
